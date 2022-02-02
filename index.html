@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>List 2 choices in the same list and ordering results</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>List 2 choices in the same list and ordering results</h1>
+    <p>One choice on the 1st list of the same peoples and hide on it the second, if you change the first choice the second choice is reset.</p>
+    <form>
+      <label for="List-1st">List 1st</label>
+        <br /><br />
+        <div id = "idL1-1"style='visibility:visible'>
+          <input id = "idL1John" onclick="hideOn2ndList(1)" type="radio" name="choice1">
+          <label for "idL1John">John</label>
+        </div>
+        <div id = "idL1-2"style='visibility:visible'>
+          <input id = "idL1Cadence" onclick="hideOn2ndList(2)" type="radio" name="choice1">
+          <label for "idL1Cadence">Cadence</label>
+        </div>
+        <div id = "idL1-3" style='visibility:visible'>
+          <input id = "idL1Johnny" onclick="hideOn2ndList(3)" type="radio" name="choice1">        
+          <label for "idL1Johnny">Johnny</label>
+        </div>
+        <div id = "idL1-4" style='visibility:visible'>
+          <input id = "idL1Elvira" onclick="hideOn2ndList(4)" type="radio" name="choice1">
+          <label for "idL1Elvira">Elvira</label>
+        </div>
+        <div id = "idL1-5" style='visibility:visible'>
+          <input id = "idL1Rico" onclick="hideOn2ndList(5)" type="radio" name="choice1">
+          <label for "idL1Rico">Rico</label>
+        </div>
+               
+        <br /><br />
+
+        <label for="List-2nd">List 2nd</label>
+        <br /><br />
+        <div id = "idL2-1"style='visibility:visible'>
+          <input id = "idL2John" type="radio" name="choice2">
+          <label for "idL2John">John</label>
+        </div>
+        <div id = "idL2-2"style='visibility:visible'>
+          <input id = "idL2Cadence" type="radio" name="choice2">
+          <label for "idL2Cadence">Cadence</label>
+        </div>
+        <div id = "idL2-3" style='visibility:visible'>
+          <input id = "idL2Johnny" type="radio" name="choice2">
+          <label for "idL2Johnny">Johnny</label>
+        </div>
+        <div id = "idL2-4" style='visibility:visible'>
+          <input id = "idL2Elvira" type="radio" name="choice2">       
+          <label for "idL2Elvira">Elvira</label>
+        </div>
+        <div id = "idL2-5" style='visibility:visible'>
+          <input id = "idL2Rico" type="radio" name="choice2">
+          <label for "idL2Rico">Rico</label>
+        </div>
+
+        <br /><br />
+      
+      <!-- To Do Reset Button and disable submit until 1 choice on list 1st and 1 choice on list 2nd have selected -->
+        
+      <input type="submit" value="Submit" />
+      <script language="javascript">
+        var x = 0;
+        /*
+        // with visibility it works but the emplacement of the element is present with empty zone
+        // may be in some case you will need these.
+        function hideOn2ndList(x) {
+            if(x == 0) { // At start display visible (to show) for all div idL2-x
+                document.getElementById("idL2-1").style.visibility="visible";
+                document.getElementById("idL2-2").style.visibility="visible";
+                document.getElementById("idL2-3").style.visibility="visible";
+                document.getElementById("idL2-4").style.visibility="visible";
+                document.getElementById("idL2-5").style.visibility="visible";
+            }
+            if(x == 1) { //display hidden for div idL2-1 and display visible (to show) for others
+              document.getElementById("idL2-1").style.visibility="hidden";
+                document.getElementById("idL2-2").style.visibility="visible";
+                document.getElementById("idL2-3").style.visibility="visible";
+                document.getElementById("idL2-4").style.visibility="visible";
+                document.getElementById("idL2-5").style.visibility="visible";
+            }
+            if(x == 2)  { //display hidden for div idL2-2 and display visible (to show) for others
+              document.getElementById("idL2-1").style.visibility="visible";
+                document.getElementById("idL2-2").style.visibility="hidden";
+                document.getElementById("idL2-3").style.visibility="visible";
+                document.getElementById("idL2-4").style.visibility="visible";
+                document.getElementById("idL2-5").style.visibility="visible";
+            }
+            if(x == 3)  { //display hidden for div idL2-3 and display visible (to show) for others
+              document.getElementById("idL2-1").style.visibility="visible";
+                document.getElementById("idL2-2").style.visibility="visible";
+                document.getElementById("idL2-3").style.visibility="hidden";
+                document.getElementById("idL2-4").style.visibility="visible";
+                document.getElementById("idL2-5").style.visibility="visible";
+            }
+            if(x == 4)  { //display hidden for div idL2-4 and display visible (to show) for others
+              document.getElementById("idL2-1").style.visibility="visible";
+                document.getElementById("idL2-2").style.visibility="visible";
+                document.getElementById("idL2-3").style.visibility="visible";
+                document.getElementById("idL2-4").style.visibility="hidden";
+                document.getElementById("idL2-5").style.visibility="visible";
+            }
+            if(x == 5)  { //display hidden for div idL2-5 and display visible (to show) for others
+              document.getElementById("idL2-1").style.visibility="visible";
+                document.getElementById("idL2-2").style.visibility="visible";
+                document.getElementById("idL2-3").style.visibility="visible";
+                document.getElementById("idL2-4").style.visibility="visible";
+                document.getElementById("idL2-5").style.visibility="hidden";
+            }
+        }
+        */
+       
+        function hideOn2ndList(x) {
+            if(x == 0) { // At start display block (to show) for all div idL2-x
+              document.getElementById("idL2-1").style.display ="block";
+              document.getElementById("idL2-2").style.display ="block";
+              document.getElementById("idL2-3").style.display ="block";
+              document.getElementById("idL2-4").style.display ="block";
+              document.getElementById("idL2-5").style.display ="block";
+            }
+            if(x == 1) { //display none for div idL2-1 and display block (to show) for others
+              document.getElementById("idL2-1").style.display = "none";
+              document.getElementById("idL2-2").style.display ="block";
+              document.getElementById("idL2-3").style.display ="block";
+              document.getElementById("idL2-4").style.display ="block";
+              document.getElementById("idL2-5").style.display ="block";
+            }
+            if(x == 2)  { //display none for div idL2-2 and display block (to show) for others
+              document.getElementById("idL2-1").style.display ="block";
+              document.getElementById("idL2-2").style.display = "none";
+              document.getElementById("idL2-3").style.display ="block";
+              document.getElementById("idL2-4").style.display ="block";
+              document.getElementById("idL2-5").style.display ="block";
+            }
+            if(x == 3)  { //display none for div idL2-3 and display block (to show) for others
+              document.getElementById("idL2-1").style.display ="block";
+              document.getElementById("idL2-2").style.display ="block";
+              document.getElementById("idL2-3").style.display = "none";
+              document.getElementById("idL2-4").style.display ="block";
+              document.getElementById("idL2-5").style.display ="block";
+            }
+            if(x == 4)  { //display none for div idL2-4 and display block (to show) for others
+              document.getElementById("idL2-1").style.display ="block";
+              document.getElementById("idL2-2").style.display ="block";
+              document.getElementById("idL2-3").style.display ="block";
+              document.getElementById("idL2-4").style.display = "none";
+              document.getElementById("idL2-5").style.display ="block";
+            }
+            if(x == 5)  { //display none for div idL2-5 and display block (to show) for others
+              document.getElementById("idL2-1").style.display ="block";
+              document.getElementById("idL2-2").style.display ="block";
+              document.getElementById("idL2-3").style.display ="block";
+              document.getElementById("idL2-4").style.display ="block";
+              document.getElementById("idL2-5").style.display = "none";
+            }
+            /*
+            // Reinit all checked button radio v
+            var ele = document.getElementsByName("Choose");
+            for(var i=0;i<ele.length;i++){
+              ele[i].checked = false;
+            }
+            */
+            document.getElementById("idL2John").checked = false;
+            document.getElementById("idL2Cadence").checked = false;
+            document.getElementById("idL2Johnny").checked = false;
+            document.getElementById("idL2Elvira").checked = false;
+            document.getElementById("idL2Rico").checked = false;
+        }
+
+        
+
+      </script>
+    </form>
+  </body>
+
+</html>
